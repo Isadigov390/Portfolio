@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa Sadigov - Computer Science Student & Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2em;
+        }
+        
+        .item-subtitle {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .date {
+            color: #764ba2;
+            font-weight: 500;
+        }
+        
+        .publication {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .publication-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .publication-venue {
+            color: #764ba2;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publication-desc {
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .link-btn {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin-top: 10px;
+            padding: 5px 15px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .link-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .certificate {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .certificate-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Isa Sadigov</h1>
+            <p class="tagline">Computer Science Student | Software Developer | ML Researcher</p>
+            <div class="contact-info">
+                <a href="mailto:isadigov390@gmail.com">📧 Email</a>
+                <a href="https://linkedin.com/in/isa-sadigov-349691299" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/Isadigov390" target="_blank">💻 GitHub</a>
+                <a href="tel:+994508927326">📱 +994 50 892 73 26</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>🎓 Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Baku Engineering University</div>
+                        <div class="item-subtitle">B.Sc. in Computer Science - GPA: 3.70/4.00</div>
+                        <div style="color: #666; margin-top: 5px;">📍 Khirdalan, Azerbaijan</div>
+                    </div>
+                    <div class="date">Sep 2022 – June 2026</div>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Code Academy</div>
+                        <div class="item-subtitle">Software Development Program</div>
+                        <div style="color: #666; margin-top: 5px;">📍 Baku, Azerbaijan</div>
+                    </div>
+                    <div class="date">Aug 2024 – Jul 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📚 Research Publications</h2>
+            <div class="publication">
+                <div class="publication-title">Improving Anomaly Detection in Banking Transactions through Feature-Enhanced and Bootstrap-Based Deep Learning Models</div>
+                <div class="publication-venue">Accepted to <a href="https://drive.google.com/file/d/1ZeIhWLESlKtB6WJsW7PsdaxcFZQuHI-O/view?usp=drive_link" target="_blank" style="color: #764ba2; text-decoration: none;">ACDSA 2026</a></div>
+                <p class="publication-desc">Added lag (1-3), MA 3 and z-score features plus 30-run bootstrapped 90% confidence bands; for 6-month forecasting, LSTM improved from MAE 203.57 and R² 0.83 to MAE 112.41 and R² 0.9404, making out-of-band months easy to flag as anomalies.</p>
+                <a href="https://drive.google.com/file/d/1pd0wCXHyQfE1x3_Sjj7YPW9T4ekuTmze/view?usp=drive_link" class="link-btn" target="_blank">📄 View Paper</a>
+            </div>
+            <div class="publication">
+                <div class="publication-title">Comparative Analysis of Machine Learning Models for Heart Disease Prediction</div>
+                <div class="publication-venue">Published at <a href="https://icelis.net/" target="_blank" style="color: #764ba2; text-decoration: none;">ICELIS 2025</a></div>
+                <p class="publication-desc">On 918 patient records (11 features), compared Logistic Regression, Random Forest, SVM, and XGBoost; Logistic Regression and Random Forest both reached 0.8804 accuracy (F1 = 0.8952 and 0.8932), while training time ranged from 0.1665s (LR) to 1.0133s (CPU XGBoost).</p>
+                <a href="https://drive.google.com/file/d/1mfA-cIVAFRFW-TtQ6GSvYCQHf6U5UlE9/view?usp=drive_link" class="link-btn" target="_blank">📄 View Paper</a>
+            </div>
+            <div class="publication">
+                <div class="publication-title">An Explainable AI Approach to Student Gender Prediction: Insights from XGBoost and SHAP Analysis</div>
+                <div class="publication-venue">Accepted to National Aviation Academy AI Conference 2025</div>
+                <p class="publication-desc">Trained LR, RF, SVM, and XGBoost (CPU/GPU) with an 80/20 split and SMOTE; SHAP showed academic level and age as the strongest drivers, and correlation analysis found a strong relationship between age and academic level (r = 0.83).</p>
+                <a href="https://drive.google.com/file/d/1v8VDt7vECYiHqItUcXfLEM2FuXxRmawG/view?usp=drive_link" class="link-btn" target="_blank">📄 View Paper</a>
+            </div>
+            <div class="publication">
+                <div class="publication-title">Role of Numerical Methods in Solving Engineering Problems</div>
+                <div class="publication-venue">Published at <a href="https://beu.edu.az/root_panel/upload/files/beu_edu_az/documents/2025/iyrc-book/GTK_Book_2025_2.pdf" target="_blank" style="color: #764ba2; text-decoration: none;">IX International Scientific Conference of Young Researchers</a></div>
+                <p class="publication-desc">Solved two real engineering ODE problems in MATLAB: a car interacting with a safety bumper and an ellipsoidal water tank draining through an outlet. Runge-Kutta (ode45) produced smooth, physically realistic results, while Euler accumulated error unless the step size was made very small.</p>
+                <a href="https://drive.google.com/file/d/1hUHz9HuoRmN0WJ9mxmhN42YtrgUg6hk2/view?usp=drive_link" class="link-btn" target="_blank">📄 View Paper</a>
+            </div>
+            <div class="publication">
+                <div class="publication-title">The Role of Numerical Methods for Solving Ordinary Differential Equations in Engineering Problems</div>
+                <div class="publication-venue">Published in <a href="https://mcs.beu.edu.az/articles/18" target="_blank" style="color: #764ba2; text-decoration: none;">Mathematics and Computer Science Journal</a></div>
+                <p class="publication-desc">Extended the comparison across multiple real systems, including the bumper impact model, tank drainage, airplane braking with drag and parachute forces, and an RC circuit response. Overall, RK4 stayed accurate and stable with practical step sizes, while Euler showed noticeable deviation as time progressed.</p>
+                <a href="https://drive.google.com/file/d/1n8Qw9raG6vpvq8oRA_Xms_ocKBZYMJT1/view?usp=drive_link" class="link-btn" target="_blank">📄 View Paper</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💻 Projects</h2>
+            <div class="project">
+                <div class="project-title">Pustok Application</div>
+                <p>An e-commerce platform dedicated to selling books. Developed using C# and ASP.NET MVC, SQL Server integrating features like user authentication, and an admin panel for management.</p>
+                <a href="https://github.com/Isadigov390/PustokApp-practice" class="link-btn" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <div class="project-title">Online Hospital Management System</div>
+                <p>Developed a full backend system using C#, .NET, Web API, MVC, and SQL Server. Implemented patient authentication, doctor scheduling, appointment, and an admin panel for management.</p>
+                <a href="https://github.com/Isadigov390/OnlineHospitalManagement" class="link-btn" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ASP.NET MVC</span>
+                        <span class="skill-tag">Web API</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">ML Models</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Presentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏆 Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate">
+                    <div class="certificate-name">Code Academy – Software Development Diploma</div>
+                    <a href="https://drive.google.com/file/d/18A4W3NuC7MvPOsTqoy4O7VW2EFneIXNa/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">Advanced C# Programming in .NET Core</div>
+                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Coursera</div>
+                    <a href="https://drive.google.com/file/d/1SNCyv5ru57UbfKffIlsZ-J2q-6Ce2Hm4/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">Microservices and Deployment with ASP.NET</div>
+                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Coursera</div>
+                    <a href="https://drive.google.com/file/d/16b6iMoIjJRoUbf3Ksmgy6uMhZcm8c-4q/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">Software Engineering: Modeling Systems using UML</div>
+                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Coursera</div>
+                    <a href="https://drive.google.com/file/d/1fh5DN6guMfTH_nuq4_U2TVXo1BHk8BXn/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">ICELIS 2025 – Participation Certificate</div>
+                    <a href="https://drive.google.com/file/d/1Wjn_TZh5hMtOjWMDyQAypP5AGYjvIu6h/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">3rd Int. Conf. on AI Technologies and Aerospace</div>
+                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Certificate of Appreciation</div>
+                    <a href="https://drive.google.com/file/d/1u7OJ2Js81REhRHlSDhD6ZSoPUkByvUDc/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate">
+                    <div class="certificate-name">IX International Scientific Conference of Young Researchers</div>
+                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">Certificate of Attendance</div>
+                    <a href="https://drive.google.com/file/d/1cMfHZjmMf-Ucz5srbWx5AHyL2x-3_NYg/view?usp=drive_link" class="link-btn" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💼 Work Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Guest Services Assistant</div>
+                        <div class="item-subtitle">Redwood - Stanley Hotel, Stanley, United States</div>
+                        <div style="color: #666; margin-top: 5px;">Work And Travel USA 2024</div>
+                    </div>
+                    <div class="date">Jun 2024 – Sep 2024</div>
+                </div>
+                <ul style="margin-top: 10px; margin-left: 20px; color: #555;">
+                    <li>Managed check-ins, check-outs, guest inquiries, bookings, and payments</li>
+                    <li>Provided guest support and resolved reservation issues with professionalism</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Languages</h2>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #667eea;">Azerbaijani:</strong> Native
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #667eea;">English:</strong> IELTS 6.5 
+                    <a href="https://drive.google.com/file/d/1TWgXBWrs6r019RSxyiga_H3uQgfCi8gK/view?usp=drive_link" target="_blank" style="color: #667eea; text-decoration: none; margin-left: 5px;">(Score Report)</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Isa Sadigov. All rights reserved.</p>
+            <p style="margin-top: 10px;">Built with passion for Computer Science and Software Development</p>
+        </footer>
+    </div>
+</body>
+</html>
